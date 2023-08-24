@@ -1,8 +1,11 @@
-/**
- Do not return anything, modify nums in-place instead.
- */
 function rotate(nums: number[], k: number): void {
-    for(let i = 0; i < k; i++){
-        nums.unshift(nums.pop())
+    const array = Array(nums.length).fill(0)
+    const length = nums.length
+    const count =  length - k % length;
+    for(let i = 0; i < length; i++){
+        array[(length - count + i) % length] = nums[i]
+    }
+    for(let i = 0; i < length; i++){
+        nums[i] = array[i]
     }
 };
