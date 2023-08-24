@@ -1,5 +1,4 @@
 function canJump(nums: number[]): boolean {
-  
   let index = 0;
   while(index < nums.length - 1){
       if(nums[index] === 0){
@@ -16,4 +15,3 @@ function canJump(nums: number[]): boolean {
   } 
   return true
 };
-
