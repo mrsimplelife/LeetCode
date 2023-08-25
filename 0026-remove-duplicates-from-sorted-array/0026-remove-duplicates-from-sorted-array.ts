@@ -1,18 +1,10 @@
-function removeDuplicates(nums: number[]): number {
-  
-  const array = []
-  for(let i = 0; i < nums.length; i++){
-    const el = nums[i]
-    if(i === 0){
-      array.push(el)
+function removeDuplicates(nums:number[]):number {
+    let index = 1;
+    for (let i = 1; i < nums.length; i++) {
+        if (nums[i] !== nums[i - 1]) {
+            nums[index] = nums[i];
+            index++;
+        }
     }
-    if (el > array[array.length - 1]){
-      array.push(el)
-    }
-  }
-  for(let i = 0; i < array.length; i++){
-    nums[i] = array[i]
-  }
-  
-  return array.length
-};
+    return index;
+}
