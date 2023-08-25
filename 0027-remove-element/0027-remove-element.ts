@@ -1,13 +1,10 @@
 function removeElement(nums: number[], val: number): number {
-    let i = 0
-    let j = nums.length - 1;
-    while (i <= j) {
-        if (nums[i] !== val) {
-            i++;
-        } else {
-            nums[i] = nums[j];
-            j--;
+    let n = 0;
+    for(const num of nums){
+        if (num !== val){
+            nums[n] = num
+            n += 1
         }
     }
-    return i
+    return n
 };
