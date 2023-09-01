@@ -42,19 +42,21 @@ function getLength(node: ListNodeType) {
   return length;
 }
 
-function split(head: ListNodeType, size: number): ListNodeType {
-  if (!head) return null;
-  while (size > 1 && head) {
-    head = head.next;
-    size -= 1;
-  }
-  if (!head) {
+
+function split(node: ListNodeType, size: number): ListNodeType {
+  if (node === null) {
     return null;
   }
-  const next = head.next;
-  head.next = null;
+  let next: ListNodeType = node.next;
+  while (size > 1 && next !== null) {
+    node = next;
+    next = next.next;
+    size -= 1;
+  }
+  node.next = null;
   return next;
 }
+
 
 function merge(head: ListNode, left: ListNodeType, right: ListNodeType): ListNode {
   while (left && right) {
