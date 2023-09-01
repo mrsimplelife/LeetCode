@@ -65,7 +65,7 @@ function merge(head: ListNode, left: ListNodeType, right: ListNodeType): ListNod
       head.next = right;
       right = right.next;
     }
-    head = head.next!;
+    head = head.next;
   }
 
   head.next = left ? left : right;
