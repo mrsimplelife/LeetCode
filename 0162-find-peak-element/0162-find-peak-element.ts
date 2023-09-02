@@ -10,7 +10,6 @@ function findPeakElement(nums: number[]): number {
     } else {
       i = mid + 1;
     }
-    console.log(i, j);
   }
 
   return i;
